@@ -448,6 +448,66 @@
       border: none;
     }
 
+    /* ── CARROSSEL ── */
+    .carousel-section {
+      width: 100%;
+      max-width: 680px;
+      margin-top: 32px;
+      overflow: hidden;
+    }
+
+    .carousel-track-wrapper {
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 12px;
+      animation: scroll-carousel 22s linear infinite;
+      width: max-content;
+    }
+
+    .carousel-track:hover { animation-play-state: paused; }
+
+    @keyframes scroll-carousel {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .carousel-img {
+      width: 180px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid rgba(212,160,23,0.2);
+      box-shadow: 0 0 16px rgba(212,160,23,0.1);
+      flex-shrink: 0;
+    }
+
+    /* ── VIDEOS PROVA SOCIAL 2 ── */
+    .proof2-section {
+      width: 100%;
+      max-width: 680px;
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .proof2-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+
+    @media (max-width: 520px) {
+      .proof2-grid { grid-template-columns: 1fr; }
+      .carousel-img { width: 140px; height: 220px; }
+    }
+
     .bonus-divider {
       width: 60px;
       height: 1px;
@@ -531,6 +591,29 @@
     <!-- PROVA SOCIAL -->
     <div class="proof-section">
       <h2 class="proof-heading">Veja quem já está <span>comprovando</span></h2>
+      <!-- Carrossel feedbacks -->
+      <div class="carousel-section">
+        <div class="carousel-track-wrapper">
+          <div class="carousel-track">
+            <img class="carousel-img" src="assets/feedback-1.png" alt="Feedback aluno">
+            <img class="carousel-img" src="assets/feedback-2.png" alt="Feedback aluno">
+            <img class="carousel-img" src="assets/feedback-4.png" alt="Feedback aluno">
+            <img class="carousel-img" src="assets/feedback-5.png" alt="Feedback aluno">
+            <img class="carousel-img" src="assets/feedback-7.png" alt="Feedback aluno">
+            <img class="carousel-img" src="assets/feedback-8.png" alt="Feedback aluno">
+            <img class="carousel-img" src="assets/feedback-10.png" alt="Feedback aluno">
+            <!-- duplicado para loop infinito -->
+            <img class="carousel-img" src="assets/feedback-1.png" alt="Feedback aluno">
+            <img class="carousel-img" src="assets/feedback-2.png" alt="Feedback aluno">
+            <img class="carousel-img" src="assets/feedback-4.png" alt="Feedback aluno">
+            <img class="carousel-img" src="assets/feedback-5.png" alt="Feedback aluno">
+            <img class="carousel-img" src="assets/feedback-7.png" alt="Feedback aluno">
+            <img class="carousel-img" src="assets/feedback-8.png" alt="Feedback aluno">
+            <img class="carousel-img" src="assets/feedback-10.png" alt="Feedback aluno">
+          </div>
+        </div>
+      </div>
+
       <div class="proof-videos">
 
         <div class="proof-video-card">
@@ -611,6 +694,42 @@
 
       <div class="bonus-divider"></div>
 
+    </div>
+
+    <!-- PROVAS SOCIAIS EM VÍDEO -->
+    <div class="proof2-section">
+      <h2 class="proof-heading">Provas sociais <span>REAIS</span> em vídeo</h2>
+      <div class="proof2-grid">
+
+        <div class="proof-video-card" style="max-width:100%">
+          <div class="proof-video-label">Provando que realmente vivo desse mercado. Mostrando conta bancária</div>
+          <div class="proof-video-frame">
+            <iframe src="https://www.youtube.com/embed/qrvEtamRcdM" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+        </div>
+
+        <div class="proof-video-card" style="max-width:100%">
+          <div class="proof-video-label">Esse aluno fez R$566 de lucro em um único dia</div>
+          <div class="proof-video-frame">
+            <iframe src="https://www.youtube.com/embed/_ePCDU-A77k" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+        </div>
+
+        <div class="proof-video-card" style="max-width:100%">
+          <div class="proof-video-label">Esse aluno largou o CLT</div>
+          <div class="proof-video-frame">
+            <iframe src="https://www.youtube.com/embed/47KtNZvgotw" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+        </div>
+
+        <div class="proof-video-card" style="max-width:100%">
+          <div class="proof-video-label">Três vendas de R$180 investindo apenas R$30 em anúncio</div>
+          <div class="proof-video-frame">
+            <iframe src="https://www.youtube.com/embed/LpKXL4RWMsE" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+        </div>
+
+      </div>
     </div>
 
   </div>
