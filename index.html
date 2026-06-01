@@ -567,7 +567,7 @@
     .carousel-track {
       display: flex;
       gap: 16px;
-      animation: scroll-carousel 40s linear infinite;
+      animation: scroll-carousel 50s linear infinite;
       width: max-content;
     }
 
@@ -579,19 +579,12 @@
     }
 
     .carousel-img {
-      width: 360px;
-      height: 560px;
-      object-fit: cover;
-      border-radius: 12px;
+      width: 100vw;
+      height: auto;
+      object-fit: contain;
+      border-radius: 0;
       flex-shrink: 0;
       display: block;
-    }
-
-    @media (max-width: 420px) {
-      .carousel-img {
-        width: 320px;
-        height: 500px;
-      }
     }
 
     /* ── VIDEOS PROVA SOCIAL 2 ── */
