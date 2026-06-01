@@ -533,10 +533,55 @@
       margin: 40px auto 0;
     }
 
+    /* ── GARANTIA ── */
+    .garantia-section {
+      width: 100%;
+      max-width: 680px;
+      margin-top: 48px;
+    }
+
+    .garantia-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: linear-gradient(135deg, rgba(212,160,23,0.07) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(212,160,23,0.25);
+      border-radius: 10px;
+      padding: 28px 28px;
+      box-shadow: 0 0 30px rgba(212,160,23,0.1);
+    }
+
+    .garantia-icon {
+      font-size: 52px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 12px rgba(212,160,23,0.5));
+    }
+
+    .garantia-title {
+      font-size: clamp(16px, 2.5vw, 22px);
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .garantia-title span {
+      color: var(--gold);
+      text-shadow: 0 0 16px rgba(212,160,23,0.4);
+    }
+
+    .garantia-desc {
+      font-size: 14px;
+      color: #b0b0b0;
+      line-height: 1.6;
+    }
+
     @media (max-width: 600px) {
       .page-wrapper { padding: 40px 16px 64px; }
       .headline { letter-spacing: -0.01em; }
       .bonus-item { padding: 16px 16px; }
+      .garantia-box { flex-direction: column; text-align: center; padding: 24px 20px; }
     }
   </style>
   <!-- Utmify Pixel -->
@@ -747,6 +792,17 @@
           </div>
         </div>
 
+      </div>
+    </div>
+
+    <!-- GARANTIA -->
+    <div class="garantia-section">
+      <div class="garantia-box">
+        <div class="garantia-icon">🛡️</div>
+        <div class="garantia-content">
+          <div class="garantia-title">Garantia Incondicional de <span>7 Dias</span></div>
+          <div class="garantia-desc">Se por qualquer motivo você não ficar satisfeito, basta enviar um e-mail em até 7 dias após a compra e devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</div>
+        </div>
       </div>
     </div>
 
