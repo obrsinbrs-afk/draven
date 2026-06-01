@@ -630,6 +630,145 @@
       .carousel-img { width: 140px; height: 220px; }
     }
 
+    /* ── PRICING ── */
+    .pricing-section {
+      width: 100%;
+      max-width: 580px;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .pricing-box {
+      width: 100%;
+      background: linear-gradient(135deg, rgba(212,160,23,0.08) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(212,160,23,0.3);
+      border-radius: 10px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 0 40px rgba(212,160,23,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* glow no topo da caixa */
+    .pricing-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-bright), var(--gold), transparent);
+    }
+
+    .pricing-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(212,160,23,0.1);
+      border: 1px solid rgba(212,160,23,0.25);
+      padding: 4px 14px;
+      border-radius: 100px;
+    }
+
+    .pricing-title {
+      font-size: clamp(16px, 2.5vw, 20px);
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .pricing-title span { color: var(--gold); }
+
+    .pricing-value-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .pricing-from {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .pricing-original {
+      font-size: 22px;
+      font-weight: 700;
+      color: #666;
+      text-decoration: line-through;
+    }
+
+    .pricing-arrow {
+      font-size: 20px;
+      color: var(--gold);
+    }
+
+    .pricing-price {
+      font-size: clamp(46px, 8vw, 68px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .pricing-price sup {
+      font-size: 0.38em;
+      font-weight: 600;
+      vertical-align: super;
+      color: var(--gold);
+    }
+
+    .pricing-price .cents {
+      font-size: 0.42em;
+      font-weight: 600;
+      vertical-align: super;
+    }
+
+    .pricing-installments {
+      font-size: 14px;
+      color: #aaa;
+      text-align: center;
+    }
+
+    .pricing-installments strong { color: #fff; }
+
+    .pricing-cta {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: #22c55e;
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 18px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 0 30px rgba(34,197,94,0.45);
+      animation: pulse-green 2s ease-in-out infinite;
+      margin-top: 4px;
+    }
+
+    .pricing-guarantee {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 4px;
+    }
+
     .bonus-divider {
       width: 60px;
       height: 1px;
@@ -910,6 +1049,37 @@
       </div>
 
       <div class="bonus-divider"></div>
+
+      <!-- PRICING -->
+      <div class="pricing-section">
+        <div class="pricing-box">
+          <span class="pricing-label">⚡ Oferta por tempo limitado</span>
+
+          <div class="pricing-title">
+            <span>Método Draven Completo</span><br>+ Todos os Bônus
+          </div>
+
+          <div class="pricing-value-stack">
+            <span class="pricing-from">De</span>
+            <span class="pricing-original">R$ 497,00</span>
+            <span class="pricing-arrow">↓</span>
+          </div>
+
+          <div class="pricing-price">
+            <sup>R$</sup>97<span class="cents">,00</span>
+          </div>
+
+          <div class="pricing-installments">
+            ou <strong>12x de R$ 9,54</strong> no cartão
+          </div>
+
+          <a class="pricing-cta" href="https://pay.kirvano.com/f4ddbd28-5113-4c8f-ad4c-4254d1bf62c1" target="_blank" rel="noopener">
+            Acessar Método Draven
+          </a>
+
+          <span class="pricing-guarantee">🔒 Pagamento 100% seguro · Garantia de 7 dias</span>
+        </div>
+      </div>
 
     </div>
 
