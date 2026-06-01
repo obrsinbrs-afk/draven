@@ -51,6 +51,41 @@
       align-items: center;
     }
 
+    /* hero com fundo de imagem */
+    .hero-section {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 56px 24px 48px;
+      background-image: url('assets/hero-bg.png');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+
+    /* overlay escuro para o texto ficar legível */
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(8,8,8,0.45) 0%,
+        rgba(8,8,8,0.30) 40%,
+        rgba(8,8,8,0.70) 85%,
+        rgba(8,8,8,1) 100%
+      );
+      z-index: 0;
+    }
+
+    .hero-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
     /* ── BADGE TOPO ── */
     .badge {
       display: inline-flex;
@@ -690,38 +725,43 @@
 
   <div class="page-wrapper">
 
-    <h1 class="headline">
-      <span class="white">Aprenda como fazer de </span><span class="gold">5 a 10 Mil reais</span><br>
-      <span class="white">por mês </span><span class="gold">criando fotos com IA!</span>
-    </h1>
+    <!-- HERO COM FUNDO -->
+    <div class="hero-section">
 
-    <p class="subheadline">Assista ao vídeo abaixo para saber mais...</p>
+      <h1 class="headline">
+        <span class="white">Aprenda como fazer de </span><span class="gold">5 a 10 Mil reais</span><br>
+        <span class="white">por mês </span><span class="gold">criando fotos com IA!</span>
+      </h1>
 
-    <div class="divider"></div>
+      <p class="subheadline">Assista ao vídeo abaixo para saber mais...</p>
 
-    <!-- VSL -->
-    <div class="vsl-wrapper">
-      <div id="ifr_6a1d21c59d0cad8c888e2816_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;">
-        <div style="position: relative; padding: 177.77777777777777% 0 0 0;" id="ifr_6a1d21c59d0cad8c888e2816_aspect">
-          <iframe
-            frameborder="0"
-            allowfullscreen
-            src="about:blank"
-            id="ifr_6a1d21c59d0cad8c888e2816"
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-            referrerpolicy="origin"
-            onload="this.onload=null, this.src='https://scripts.converteai.net/05f907cf-e8f9-4c03-8930-9f053da33e1e/players/6a1d21c59d0cad8c888e2816/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"
-          ></iframe>
+      <div class="divider"></div>
+
+      <!-- VSL -->
+      <div class="vsl-wrapper">
+        <div id="ifr_6a1d21c59d0cad8c888e2816_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;">
+          <div style="position: relative; padding: 177.77777777777777% 0 0 0;" id="ifr_6a1d21c59d0cad8c888e2816_aspect">
+            <iframe
+              frameborder="0"
+              allowfullscreen
+              src="about:blank"
+              id="ifr_6a1d21c59d0cad8c888e2816"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              referrerpolicy="origin"
+              onload="this.onload=null, this.src='https://scripts.converteai.net/05f907cf-e8f9-4c03-8930-9f053da33e1e/players/6a1d21c59d0cad8c888e2816/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"
+            ></iframe>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- CTA estático abaixo da VSL -->
-    <div class="cta-wrapper" id="ctaWrapper">
-      <a class="cta-btn" id="ctaStatic" href="https://pay.kirvano.com/f4ddbd28-5113-4c8f-ad4c-4254d1bf62c1" target="_blank" rel="noopener">
-        Acessar Método Draven
-      </a>
-    </div>
+      <!-- CTA estático abaixo da VSL -->
+      <div class="cta-wrapper" id="ctaWrapper">
+        <a class="cta-btn" id="ctaStatic" href="https://pay.kirvano.com/f4ddbd28-5113-4c8f-ad4c-4254d1bf62c1" target="_blank" rel="noopener">
+          Acessar Método Draven
+        </a>
+      </div>
+
+    </div><!-- fecha hero-section -->
 
     <!-- SEPARADOR + PROVA SOCIAL -->
     <div class="section-separator">
