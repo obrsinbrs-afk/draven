@@ -73,9 +73,9 @@
       inset: 0;
       background: linear-gradient(
         180deg,
-        rgba(8,8,8,0.30) 0%,
-        rgba(8,8,8,0.22) 35%,
-        rgba(8,8,8,0.55) 80%,
+        rgba(8,8,8,0.05) 0%,
+        rgba(8,8,8,0.05) 35%,
+        rgba(8,8,8,0.45) 75%,
         rgba(8,8,8,1) 100%
       );
       z-index: 0;
@@ -519,18 +519,8 @@
       gap: 0;
     }
 
-    /* linha apenas no rodapé do separador */
-    .section-separator::before {
-      display: none;
-    }
-
-    .section-separator::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(212,160,23,0.15) 20%, rgba(212,160,23,0.5) 50%, rgba(212,160,23,0.15) 80%, transparent 100%);
-    }
+    .section-separator::before,
+    .section-separator::after { display: none; }
 
     /* ornamento central no topo da separação */
     .sep-ornament {
@@ -902,12 +892,6 @@
 
     <!-- SEPARADOR + PROVA SOCIAL -->
     <div class="section-separator">
-      <div class="sep-ornament">
-        <div class="sep-ornament-line"></div>
-        <div class="sep-ornament-diamond"></div>
-        <div class="sep-ornament-line right"></div>
-      </div>
-
       <div class="proof-section" style="margin-top:0; max-width:100%">
         <h2 class="proof-heading">Veja o resultado dos alunos do <span>Método Draven</span></h2>
       <!-- Carrossel feedbacks -->
