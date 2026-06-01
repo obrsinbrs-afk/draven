@@ -560,14 +560,15 @@
 
     /* ── CARROSSEL ── */
     .carousel-section {
-      width: 100%;
+      width: 100vw;
       overflow: hidden;
       margin-top: 20px;
+      background: #080808;
     }
 
     .carousel-track {
       display: flex;
-      gap: 16px;
+      gap: 0;
       animation: scroll-carousel 50s linear infinite;
       width: max-content;
     }
@@ -583,7 +584,6 @@
       width: 100vw;
       height: auto;
       object-fit: contain;
-      border-radius: 0;
       flex-shrink: 0;
       display: block;
     }
@@ -903,36 +903,36 @@
 
   <div class="page-wrapper">
 
-    <!-- SEPARADOR + PROVA SOCIAL -->
-    <div class="section-separator">
-      <div class="proof-section" style="margin-top:0; max-width:100%">
-        <h2 class="proof-heading">Veja o resultado dos alunos do <span>Método Draven</span></h2>
-      </div>
+    <!-- TÍTULO ALUNOS -->
+    <h2 class="proof-heading" style="text-align:center; margin-top:48px; padding: 0 20px;">Veja o resultado dos alunos do <span>Método Draven</span></h2>
 
-      <!-- Carrossel FORA do proof-section pra não ser limitado -->
-      <div class="carousel-section">
-        <div class="carousel-track-wrapper">
-          <div class="carousel-track">
-            <img class="carousel-img" src="assets/feedback-1.webp" alt="Feedback aluno">
-            <img class="carousel-img" src="assets/feedback-2.webp" alt="Feedback aluno">
-            <img class="carousel-img" src="assets/feedback-4.webp" alt="Feedback aluno">
-            <img class="carousel-img" src="assets/feedback-5.webp" alt="Feedback aluno">
-            <img class="carousel-img" src="assets/feedback-7.webp" alt="Feedback aluno">
-            <img class="carousel-img" src="assets/feedback-8.webp" alt="Feedback aluno">
-            <img class="carousel-img" src="assets/feedback-10.webp" alt="Feedback aluno">
-            <img class="carousel-img" src="assets/feedback-1.webp" alt="Feedback aluno">
-            <img class="carousel-img" src="assets/feedback-2.webp" alt="Feedback aluno">
-            <img class="carousel-img" src="assets/feedback-4.webp" alt="Feedback aluno">
-            <img class="carousel-img" src="assets/feedback-5.webp" alt="Feedback aluno">
-            <img class="carousel-img" src="assets/feedback-7.webp" alt="Feedback aluno">
-            <img class="carousel-img" src="assets/feedback-8.webp" alt="Feedback aluno">
-            <img class="carousel-img" src="assets/feedback-10.webp" alt="Feedback aluno">
-          </div>
-        </div>
-      </div>
+  </div><!-- fecha page-wrapper temporariamente -->
 
-      <div class="proof-section" style="margin-top:16px; max-width:100%">
-      <div class="proof-videos">
+  <!-- CARROSSEL DIRETO NO BODY SEM CONTAINER -->
+  <div class="carousel-section">
+    <div class="carousel-track">
+      <img class="carousel-img" src="assets/feedback-1.webp" alt="Feedback aluno">
+      <img class="carousel-img" src="assets/feedback-2.webp" alt="Feedback aluno">
+      <img class="carousel-img" src="assets/feedback-4.webp" alt="Feedback aluno">
+      <img class="carousel-img" src="assets/feedback-5.webp" alt="Feedback aluno">
+      <img class="carousel-img" src="assets/feedback-7.webp" alt="Feedback aluno">
+      <img class="carousel-img" src="assets/feedback-8.webp" alt="Feedback aluno">
+      <img class="carousel-img" src="assets/feedback-10.webp" alt="Feedback aluno">
+      <img class="carousel-img" src="assets/feedback-1.webp" alt="Feedback aluno">
+      <img class="carousel-img" src="assets/feedback-2.webp" alt="Feedback aluno">
+      <img class="carousel-img" src="assets/feedback-4.webp" alt="Feedback aluno">
+      <img class="carousel-img" src="assets/feedback-5.webp" alt="Feedback aluno">
+      <img class="carousel-img" src="assets/feedback-7.webp" alt="Feedback aluno">
+      <img class="carousel-img" src="assets/feedback-8.webp" alt="Feedback aluno">
+      <img class="carousel-img" src="assets/feedback-10.webp" alt="Feedback aluno">
+    </div>
+  </div>
+
+  <div class="page-wrapper">
+
+    <!-- VIDEOS PROVA SOCIAL -->
+    <div class="proof-section" style="margin-top:32px; max-width:100%">
+    <div class="proof-videos">
 
         <div class="proof-video-card">
           <div class="proof-video-label">Será que realmente isso funciona?</div>
@@ -948,9 +948,8 @@
           </div>
         </div>
 
-      </div>
-      </div><!-- fecha proof-section 2 -->
-    </div><!-- fecha section-separator -->
+    </div>
+    </div>
 
     <!-- PROVAS SOCIAIS EM VÍDEO -->
     <div class="proof2-section">
