@@ -650,14 +650,7 @@
       overflow: hidden;
     }
 
-    /* glow no topo da caixa */
-    .pricing-box::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-bright), var(--gold), transparent);
-    }
+    .pricing-box::before { display: none; }
 
     .pricing-label {
       font-size: 11px;
@@ -1063,7 +1056,7 @@
           <div class="pricing-row">
             <div class="pricing-col-left">
               <span class="pricing-from">Valor de</span>
-              <span class="pricing-original">R$ 397,00</span>
+              <span class="pricing-original">R$ 5.088,00</span>
             </div>
             <div class="pricing-col-right">
               <div class="pricing-price">
