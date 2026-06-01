@@ -206,9 +206,123 @@
       max-width: 100% !important;
     }
 
+    /* ── BONUS SECTION ── */
+    .bonus-section {
+      width: 100%;
+      max-width: 680px;
+      margin-top: 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .bonus-tag {
+      display: inline-block;
+      background: #D4A017;
+      color: #0a0a0a;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 5px 18px;
+      border-radius: 2px;
+      margin-bottom: 14px;
+    }
+
+    .bonus-title {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 700;
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .bonus-title span {
+      color: var(--gold);
+      text-shadow: 0 0 20px rgba(212,160,23,0.4);
+    }
+
+    .bonus-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 36px;
+      letter-spacing: 0.02em;
+    }
+
+    .bonus-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .bonus-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: linear-gradient(135deg, rgba(212,160,23,0.06) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(212,160,23,0.14);
+      border-left: 3px solid var(--gold);
+      border-radius: 6px;
+      padding: 20px 22px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .bonus-item:hover {
+      border-color: rgba(212,160,23,0.35);
+      border-left-color: var(--gold-bright);
+      background: linear-gradient(135deg, rgba(212,160,23,0.1) 0%, rgba(255,255,255,0.03) 100%);
+    }
+
+    .bonus-number {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(212,160,23,0.12);
+      border: 1px solid rgba(212,160,23,0.35);
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0;
+    }
+
+    .bonus-content {}
+
+    .bonus-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .bonus-desc {
+      font-size: 14px;
+      color: #c8c8c8;
+      line-height: 1.55;
+    }
+
+    .bonus-divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 40px auto 0;
+    }
+
     @media (max-width: 600px) {
       .page-wrapper { padding: 40px 16px 64px; }
       .headline { letter-spacing: -0.01em; }
+      .bonus-item { padding: 16px 16px; }
     }
   </style>
 </head>
@@ -247,6 +361,64 @@
       <a class="cta-btn" href="https://pay.kirvano.com/f4ddbd28-5113-4c8f-ad4c-4254d1bf62c1" target="_blank" rel="noopener">
         Acessar Método Draven
       </a>
+    </div>
+
+    <!-- BONUS SECTION -->
+    <div class="bonus-section">
+
+      <span class="bonus-tag">⚡ Bônus Exclusivos — Apenas Hoje</span>
+
+      <h2 class="bonus-title">
+        Além do método, você leva <span>tudo isso</span><br>sem pagar nada a mais
+      </h2>
+      <p class="bonus-subtitle">Bônus criados para você escalar mais rápido, com menos erro e mais resultado.</p>
+
+      <div class="bonus-list">
+
+        <div class="bonus-item">
+          <div class="bonus-number">01</div>
+          <div class="bonus-content">
+            <div class="bonus-name">Espionagem Avançada</div>
+            <div class="bonus-desc">Deixe o seu concorrente gastar o dinheiro dele testando — e você chega depois pegando tudo validado. Aprenda a mapear os criativos, ofertas e estratégias que já estão convertendo no mercado antes de investir R$1.</div>
+          </div>
+        </div>
+
+        <div class="bonus-item">
+          <div class="bonus-number">02</div>
+          <div class="bonus-content">
+            <div class="bonus-name">LTV — Cliente Viciado em Você</div>
+            <div class="bonus-desc">Vender uma vez é bom. Fazer o mesmo cliente comprar repetidamente é o jogo dos que faturam de verdade. Descubra como construir uma relação que transforma compradores em fãs que pagam, voltam e indicam.</div>
+          </div>
+        </div>
+
+        <div class="bonus-item">
+          <div class="bonus-number">03</div>
+          <div class="bonus-content">
+            <div class="bonus-name">Otimização Avançada</div>
+            <div class="bonus-desc">A diferença entre quem escala e quem estagna está nos ajustes certos na hora certa. Aprenda a ler os dados, identificar gargalos e apertar os parafusos do seu negócio para extrair o máximo de cada real investido.</div>
+          </div>
+        </div>
+
+        <div class="bonus-item">
+          <div class="bonus-number">04</div>
+          <div class="bonus-content">
+            <div class="bonus-name">O Que Fazer em um Dia Ruim</div>
+            <div class="bonus-desc">Todo mundo tem dias ruins — a diferença é o que você faz com eles. Aqui você aprende tomada de decisão na prática: como agir quando os resultados travam, as vendas caem e a cabeça quer desistir. Isso é o que separa quem cresce de quem abandona.</div>
+          </div>
+        </div>
+
+        <div class="bonus-item">
+          <div class="bonus-number">05</div>
+          <div class="bonus-content">
+            <div class="bonus-name">Mindset Draven — Reprogramação Mental na Prática</div>
+            <div class="bonus-desc">Como programei minha própria mente para governar resultados e não ser governado pelas circunstâncias. Exercícios reais de reprogramação mental que uso todo dia — não é motivação, é arquitetura de pensamento.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bonus-divider"></div>
+
     </div>
 
   </div>
