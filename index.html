@@ -629,6 +629,96 @@
     }
 
 
+    /* ── FAQ ── */
+    .faq-section {
+      width: 100%;
+      max-width: 680px;
+      margin-top: 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .faq-title {
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-title span { color: var(--gold); text-shadow: 0 0 20px rgba(212,160,23,0.4); }
+
+    .faq-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      border: 1px solid rgba(212,160,23,0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.02);
+      transition: border-color 0.2s;
+    }
+
+    .faq-item.open {
+      border-color: rgba(212,160,23,0.45);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 20px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .faq-item.open .faq-question { color: var(--gold); }
+
+    .faq-icon {
+      flex-shrink: 0;
+      font-size: 22px;
+      color: var(--gold);
+      font-weight: 300;
+      transition: transform 0.3s;
+      line-height: 1;
+    }
+
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 20px;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 20px 18px;
+    }
+
+    .faq-answer p {
+      font-size: 14px;
+      color: #b0b0b0;
+      line-height: 1.65;
+    }
+
     /* ── PRICING ── */
     .pricing-section {
       width: 100%;
@@ -1096,6 +1186,65 @@
       </div>
     </div>
 
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2 class="faq-title">Perguntas <span>Frequentes</span></h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Preciso ter experiência com design ou tecnologia?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Não precisa de nenhuma experiência anterior. O método foi criado do zero para quem nunca mexeu com nada disso. Se você sabe usar o celular e tem acesso à internet, você consegue aplicar tudo.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Em quanto tempo consigo fazer minha primeira venda?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Alunos relatam primeiras vendas ainda na primeira semana seguindo o método. Obviamente depende da sua dedicação, mas o modelo é simples e validado — não precisa inventar nada do zero.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Precisa investir em anúncios pagos?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Não é obrigatório. Você aprende como vender de forma orgânica. Mas o método também ensina como usar tráfego pago de forma inteligente — como tirar 3 vendas de R$180 investindo apenas R$30, como mostrado nos depoimentos.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>É permitido vender fotos geradas por IA?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sim. Existe um mercado enorme e crescente para fotos de IA — desde perfis em redes sociais, campanhas de marketing, produtos digitais até muito mais. O método ensina exatamente quais nichos compram e como entregar.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>E se eu comprar e não gostar?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Você tem 7 dias de garantia incondicional. Se por qualquer motivo não ficar satisfeito, manda um e-mail e devolvemos 100% do valor pago. Sem perguntas, sem enrolação.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
 
@@ -1107,6 +1256,14 @@
   </div>
 
   <script>
+    // FAQ accordion
+    function toggleFaq(btn) {
+      var item = btn.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!isOpen) item.classList.add('open');
+    }
+
     // Mostra botão estático após 1s
     setTimeout(function() {
       document.getElementById('ctaWrapper').classList.add('visible');
