@@ -581,12 +581,12 @@
       width: calc(50% - 6px);
       min-width: calc(50% - 6px);
       height: auto;
-      aspect-ratio: 9/16;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 10px;
       border: 1px solid rgba(212,160,23,0.25);
       box-shadow: 0 0 20px rgba(212,160,23,0.12);
       flex-shrink: 0;
+      display: block;
     }
 
     .carousel-nav {
@@ -1140,7 +1140,7 @@
   </div>
 
   <script>
-    // Slider 2x2
+    // Slider 2x2 com autoplay
     (function() {
       var track = document.getElementById('carouselTrack');
       var dotsEl = document.getElementById('carouselDots');
@@ -1150,21 +1150,18 @@
       var perPage = 2;
       var pages = Math.ceil(total / perPage);
       var current = 0;
+      var timer;
 
-      // cria dots
       for (var i = 0; i < pages; i++) {
         var d = document.createElement('div');
         d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
         d.dataset.i = i;
-        d.onclick = function() { goTo(+this.dataset.i); };
+        d.onclick = function() { goTo(+this.dataset.i); resetTimer(); };
         dotsEl.appendChild(d);
       }
 
       function goTo(page) {
         current = (page + pages) % pages;
-        var offset = current * (100 / perPage) * perPage;
-        track.style.transform = 'translateX(-' + (current * (100 + (12 / track.parentElement.offsetWidth * 100))) + '%)';
-        // cálculo preciso usando px
         var imgW = imgs[0].offsetWidth;
         track.style.transform = 'translateX(-' + (current * perPage * (imgW + 12)) + 'px)';
         dotsEl.querySelectorAll('.carousel-dot').forEach(function(d, idx) {
@@ -1172,16 +1169,23 @@
         });
       }
 
-      document.getElementById('carouselNext').onclick = function() { goTo(current + 1); };
-      document.getElementById('carouselPrev').onclick = function() { goTo(current - 1); };
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(function() { goTo(current + 1); }, 3000);
+      }
 
-      // swipe touch
+      document.getElementById('carouselNext').onclick = function() { goTo(current + 1); resetTimer(); };
+      document.getElementById('carouselPrev').onclick = function() { goTo(current - 1); resetTimer(); };
+
+      // swipe
       var startX = 0;
       track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; });
       track.addEventListener('touchend', function(e) {
         var diff = startX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
+        if (Math.abs(diff) > 40) { goTo(current + (diff > 0 ? 1 : -1)); resetTimer(); }
       });
+
+      resetTimer();
     })();
   </script>
 
