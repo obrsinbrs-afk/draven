@@ -559,8 +559,8 @@
     /* ── CARROSSEL ── */
     /* ── CARROSSEL CONTÍNUO ── */
     .carousel-section {
-      width: 100%;
-      max-width: 100%;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
       margin-top: 16px;
       overflow: hidden;
     }
@@ -571,8 +571,8 @@
 
     .carousel-track {
       display: flex;
-      gap: 12px;
-      animation: scroll-carousel 32s linear infinite;
+      gap: 16px;
+      animation: scroll-carousel 36s linear infinite;
       width: max-content;
     }
 
@@ -584,8 +584,8 @@
     }
 
     .carousel-img {
-      width: 85vw;
-      max-width: 420px;
+      width: 92vw;
+      max-width: 92vw;
       height: auto;
       object-fit: contain;
       border-radius: 10px;
