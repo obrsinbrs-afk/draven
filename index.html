@@ -514,15 +514,22 @@
       gap: 24px;
     }
 
-    .proof2-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      width: 100%;
+    .proof2-heading {
+      font-size: clamp(24px, 4vw, 38px);
+      font-weight: 700;
+      color: #ffffff;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .proof2-heading span {
+      color: var(--gold);
+      text-shadow: 0 0 20px rgba(212,160,23,0.4);
     }
 
     @media (max-width: 520px) {
-      .proof2-grid { grid-template-columns: 1fr; }
       .carousel-img { width: 140px; height: 220px; }
     }
 
@@ -552,9 +559,10 @@
     }
 
     .garantia-icon {
-      font-size: 52px;
+      width: 120px;
+      height: auto;
       flex-shrink: 0;
-      filter: drop-shadow(0 0 12px rgba(212,160,23,0.5));
+      filter: drop-shadow(0 0 16px rgba(212,160,23,0.45));
     }
 
     .garantia-title {
@@ -696,6 +704,42 @@
       </div>
     </div>
 
+    <!-- PROVAS SOCIAIS EM VÍDEO -->
+    <div class="proof2-section">
+      <h2 class="proof2-heading">Provas sociais <span>REAIS</span> em vídeo</h2>
+      <div class="proof-videos">
+
+        <div class="proof-video-card">
+          <div class="proof-video-label">Provando que realmente vivo desse mercado. Mostrando conta bancária</div>
+          <div class="proof-video-frame">
+            <iframe src="https://www.youtube.com/embed/qrvEtamRcdM" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+        </div>
+
+        <div class="proof-video-card">
+          <div class="proof-video-label">Esse aluno fez R$566 de lucro em um único dia</div>
+          <div class="proof-video-frame">
+            <iframe src="https://www.youtube.com/embed/_ePCDU-A77k" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+        </div>
+
+        <div class="proof-video-card">
+          <div class="proof-video-label">Esse aluno largou o CLT</div>
+          <div class="proof-video-frame">
+            <iframe src="https://www.youtube.com/embed/47KtNZvgotw" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+        </div>
+
+        <div class="proof-video-card">
+          <div class="proof-video-label">Três vendas de R$180 investindo apenas R$30 em anúncio</div>
+          <div class="proof-video-frame">
+            <iframe src="https://www.youtube.com/embed/LpKXL4RWMsE" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <!-- BONUS SECTION -->
     <div class="bonus-section">
 
@@ -759,46 +803,10 @@
 
     </div>
 
-    <!-- PROVAS SOCIAIS EM VÍDEO -->
-    <div class="proof2-section">
-      <h2 class="proof-heading">Provas sociais <span>REAIS</span> em vídeo</h2>
-      <div class="proof2-grid">
-
-        <div class="proof-video-card" style="max-width:100%">
-          <div class="proof-video-label">Provando que realmente vivo desse mercado. Mostrando conta bancária</div>
-          <div class="proof-video-frame">
-            <iframe src="https://www.youtube.com/embed/qrvEtamRcdM" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-          </div>
-        </div>
-
-        <div class="proof-video-card" style="max-width:100%">
-          <div class="proof-video-label">Esse aluno fez R$566 de lucro em um único dia</div>
-          <div class="proof-video-frame">
-            <iframe src="https://www.youtube.com/embed/_ePCDU-A77k" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-          </div>
-        </div>
-
-        <div class="proof-video-card" style="max-width:100%">
-          <div class="proof-video-label">Esse aluno largou o CLT</div>
-          <div class="proof-video-frame">
-            <iframe src="https://www.youtube.com/embed/47KtNZvgotw" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-          </div>
-        </div>
-
-        <div class="proof-video-card" style="max-width:100%">
-          <div class="proof-video-label">Três vendas de R$180 investindo apenas R$30 em anúncio</div>
-          <div class="proof-video-frame">
-            <iframe src="https://www.youtube.com/embed/LpKXL4RWMsE" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
     <!-- GARANTIA -->
     <div class="garantia-section">
       <div class="garantia-box">
-        <div class="garantia-icon">🛡️</div>
+        <img src="assets/selo-garantia.png" alt="Garantia 7 dias" class="garantia-icon">
         <div class="garantia-content">
           <div class="garantia-title">Garantia Incondicional de <span>7 Dias</span></div>
           <div class="garantia-desc">Se por qualquer motivo você não ficar satisfeito, basta enviar um e-mail em até 7 dias após a compra e devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</div>
