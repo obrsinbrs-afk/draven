@@ -939,14 +939,18 @@
       .garantia-box { flex-direction: column; text-align: center; padding: 24px 20px; }
     }
   </style>
-  <!-- Utmify UTMs -->
-  <script
-    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-    data-utmify-prevent-xcod-sck
-    data-utmify-prevent-subids
-    async
-    defer
-  ></script>
+  <!-- Utmify UTMs — carrega com delay pra não interferir no iframe -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var s = document.createElement('script');
+        s.src = 'https://cdn.utmify.com.br/scripts/utms/latest.js';
+        s.setAttribute('data-utmify-prevent-xcod-sck', '');
+        s.setAttribute('data-utmify-prevent-subids', '');
+        document.head.appendChild(s);
+      }, 8000); // 8 segundos após carregamento
+    });
+  </script>
   <!-- Utmify Pixel -->
   <script>
     window.pixelId = "688e199f538b6e356372f414";
