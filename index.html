@@ -939,17 +939,18 @@
       .garantia-box { flex-direction: column; text-align: center; padding: 24px 20px; }
     }
   </style>
-  <!-- Utmify UTMs — carrega com delay pra não interferir no iframe -->
+  <!-- Captura UTMs sem modificar URL -->
   <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        var s = document.createElement('script');
-        s.src = 'https://cdn.utmify.com.br/scripts/utms/latest.js';
-        s.setAttribute('data-utmify-prevent-xcod-sck', '');
-        s.setAttribute('data-utmify-prevent-subids', '');
-        document.head.appendChild(s);
-      }, 8000); // 8 segundos após carregamento
-    });
+    (function() {
+      var params = new URLSearchParams(location.search);
+      var utms = {};
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','sck','src'].forEach(function(k) {
+        if (params.get(k)) utms[k] = params.get(k);
+      });
+      if (Object.keys(utms).length) {
+        sessionStorage.setItem('_utms', JSON.stringify(utms));
+      }
+    })();
   </script>
   <!-- Utmify Pixel -->
   <script>
@@ -1275,6 +1276,21 @@
   </div>
 
   <script>
+    // Injeta UTMs nos links do checkout
+    (function() {
+      var base = 'https://pay.kirvano.com/f4ddbd28-5113-4c8f-ad4c-4254d1bf62c1';
+      function buildUrl() {
+        var stored = sessionStorage.getItem('_utms');
+        if (!stored) return base;
+        var utms = JSON.parse(stored);
+        var q = Object.keys(utms).map(function(k){ return k+'='+encodeURIComponent(utms[k]); }).join('&');
+        return base + (base.indexOf('?') > -1 ? '&' : '?') + q;
+      }
+      document.querySelectorAll('a[href*="pay.kirvano.com"]').forEach(function(a) {
+        a.addEventListener('click', function() { this.href = buildUrl(); });
+      });
+    })();
+
     // FAQ accordion
     function toggleFaq(btn) {
       var item = btn.parentElement;
