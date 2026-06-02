@@ -1006,15 +1006,16 @@
 
   </div><!-- fecha hero-section -->
 
-  <div class="page-wrapper" id="contentBelow" style="display:none">
+  <!-- TUDO ABAIXO ESCONDIDO ATÉ 17:04 -->
+  <div id="allBelow" style="display:none">
 
+  <div class="page-wrapper">
     <!-- TÍTULO ALUNOS -->
     <h2 class="proof-heading" style="text-align:center; margin-top:40px; padding: 0 20px;">Veja o resultado dos alunos do <span>Método Draven</span></h2>
-
-  </div><!-- fecha page-wrapper temporariamente -->
+  </div>
 
   <!-- CARROSSEL DIRETO NO BODY SEM CONTAINER -->
-  <div class="carousel-section" id="carouselBelow" style="display:none; margin-top:12px;">
+  <div class="carousel-section" style="margin-top:12px;">
     <div class="carousel-track">
       <img class="carousel-img" src="assets/feedback-1.webp" alt="Feedback aluno">
       <img class="carousel-img" src="assets/feedback-2.webp" alt="Feedback aluno">
@@ -1033,7 +1034,7 @@
     </div>
   </div>
 
-  <div class="page-wrapper">
+  <div class="page-wrapper" style="width:100%">
 
     <!-- VIDEOS PROVA SOCIAL -->
     <div class="proof-section" style="margin-top:32px; max-width:100%">
@@ -1260,6 +1261,7 @@
 
   </div>
 
+  </div><!-- fecha allBelow -->
 
   <!-- Botão fixo -->
   <div class="cta-fixed" id="ctaFixed">
@@ -1277,20 +1279,17 @@
       if (!isOpen) item.classList.add('open');
     }
 
-    // 17:04 = 1024 segundos — aparece botão, carrossel e conteúdo abaixo
+    // 17:04 = 1024 segundos
     var PITCH_TIME = 1024 * 1000;
 
     setTimeout(function() {
-      // botão estático
+      // mostra botão estático
       var ctaWrapper = document.getElementById('ctaWrapper');
       if (ctaWrapper) ctaWrapper.classList.add('visible');
 
-      // conteúdo abaixo da VSL
-      var contentBelow = document.getElementById('contentBelow');
-      if (contentBelow) contentBelow.style.display = '';
-
-      var carouselBelow = document.getElementById('carouselBelow');
-      if (carouselBelow) carouselBelow.style.display = '';
+      // mostra todo conteúdo abaixo
+      var allBelow = document.getElementById('allBelow');
+      if (allBelow) allBelow.style.display = 'block';
 
       // botão fixo começa a observar
       var ctaFixed = document.getElementById('ctaFixed');
